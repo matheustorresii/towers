@@ -1,3 +1,6 @@
 {
-    "hello": "world"
+    "delay": 1000,
+    "response": {
+        "hello": "world"
+    }
 }

@@ -1,10 +1,10 @@
 defmodule Towers.Mock do
   def execute(%{"mock_path" => mock_path}, method) do
     mock_path
-    |> create_file_name(method)
+    |> handle_path(method)
   end
 
-  defp create_file_name(paths, method) do
+  defp handle_path(paths, method) do
     joined_path = paths
     |> Enum.join("_")
 
