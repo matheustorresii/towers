@@ -10,7 +10,7 @@ defmodule TowersWeb.Router do
     pipe_through :api
 
     if Mix.env() in [:dev, :test] do
-      pipe_through [:fetch_session, :protect_from_forgery]
+      # pipe_through [:fetch_session, :protect_from_forgery]
       live_dashboard "/dashboard", metrics: TowersWeb.Telemetry
     end
 

@@ -13,15 +13,13 @@ defmodule Towers.Mock do
     |> handle_data()
   end
 
-  defp handle_data({:ok, data}), do: handle_mock(data)
-
-  defp handle_data({:error, _error}), do: {:error, "Mock not found! :("}
-
-  defp handle_mock(data) do
+  defp handle_data({:ok, data}) do
     data
     |> Poison.decode()
     |> handle_parse()
   end
+
+  defp handle_data({:error, _error}), do: {:error, "Mock not found! :("}
 
   defp handle_parse({:ok, %{"delay" => delay, "response" => response}}) do
     :timer.sleep(delay)
